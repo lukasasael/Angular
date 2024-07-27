@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { SecondHTMLComponent } from './second-html/second-html.component';
@@ -23,4 +23,12 @@ import { ProductsComponent } from './products/products.component';
 export class AppComponent {
   siteName = 'Saturday for Him';
   title = 'AngularBasics';
+
+  @ViewChild('greetPerson') greetingPerson!: ElementRef;
+  @ViewChild('personName') nameOfPerson!: ElementRef;
+
+  printPersonName() {
+    let greeting = this.greetingPerson!.nativeElement.innerText;
+    this.nameOfPerson.nativeElement.innerText = greeting;
+  }
 }

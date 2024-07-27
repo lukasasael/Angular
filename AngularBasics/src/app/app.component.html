@@ -9,4 +9,6 @@
 <app-third-html></app-third-html>
 <app-products #products></app-products>
 
-<p>Hello! {{products.selectedPerson?.name}}</p>
+<p #greetPerson>Hello! {{ products.selectedPerson?.name }}</p>
+<button (click)="printPersonName()" class="btn btn-danger">Transform in Stone</button>
+<p #personName></p>
