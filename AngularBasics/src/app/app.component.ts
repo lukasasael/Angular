@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { SecondHTMLComponent } from './second-html/second-html.component';
 import { ThirdHtmlComponent } from './third-html/third-html.component';
 import { SearchComponent } from "./search/search.component";
+import { ProductsComponent } from './products/products.component';
 
 @Component({
   selector: 'app-roots',
@@ -14,6 +15,7 @@ import { SearchComponent } from "./search/search.component";
     SecondHTMLComponent,
     ThirdHtmlComponent,
     SearchComponent,
+    ProductsComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
