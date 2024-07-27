@@ -1,0 +1,31 @@
+<div class="filter-container" style="margin: 2%">
+  <span>Filter: </span>
+
+  <input
+    type="radio"
+    name="filter"
+    value="all"
+    style="margin-left: 1%"
+    [(ngModel)]="selectedRadioButtonValue"
+    (change)="onRadioButtonSelectionChanged()"
+  />
+  <span style="margin-right: 2%">{{ "All:(" + all + ")" }}</span>
+
+  <input
+    type="radio"
+    name="filter"
+    value="yes"
+    [(ngModel)]="selectedRadioButtonValue"
+    (change)="onRadioButtonSelectionChanged()"
+  />
+  <span style="margin-right: 2%">{{ "Beautiful:(" + beautiful + ")" }}</span>
+
+  <input
+    type="radio"
+    name="filter"
+    value="no"
+    [(ngModel)]="selectedRadioButtonValue"
+    (change)="onRadioButtonSelectionChanged()"
+  />
+  <span style="margin-right: 2%">{{ "Ugly:(" + ugly + ")" }}</span>
+</div>

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { SecondHTMLComponent } from './second-html/second-html.component';
 import { ThirdHtmlComponent } from './third-html/third-html.component';
-import { SearchComponent } from "./search/search.component";
+import { SearchComponent } from './search/search.component';
 import { ProductsComponent } from './products/products.component';
 
 @Component({
@@ -15,8 +15,8 @@ import { ProductsComponent } from './products/products.component';
     SecondHTMLComponent,
     ThirdHtmlComponent,
     SearchComponent,
-    ProductsComponent
-],
+    ProductsComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

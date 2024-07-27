@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -12,7 +12,13 @@ import { CommonModule } from '@angular/common';
 export class SearchComponent {
   searchText: string = '';
   changeSearchValue(event: any) {
-    console.log((<HTMLInputElement>event.target).value);
     this.searchText = (<HTMLInputElement>event.target).value;
+  }
+
+  @Output()
+  searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
+
+  onSearchTextChanged() {
+    this.searchTextChanged.emit(this.searchText);
   }
 }
