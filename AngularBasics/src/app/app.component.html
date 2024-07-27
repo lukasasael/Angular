@@ -7,4 +7,6 @@
 </p>
 <app-second-html></app-second-html>
 <app-third-html></app-third-html>
-<app-products></app-products>
+<app-products #products></app-products>
+
+<p>Hello! {{products.selectedPerson?.name}}</p>

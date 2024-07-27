@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FilterComponent } from '../filter/filter.component';
-import { SearchComponent } from "../search/search.component";
+import { SearchComponent } from '../search/search.component';
 
 @Component({
   selector: 'app-products',
@@ -11,6 +11,42 @@ import { SearchComponent } from "../search/search.component";
   styleUrl: './products.component.css',
 })
 export class ProductsComponent {
+  monsterRevealed: boolean = false;
+  selectedPerson: any;
+
+  alertInfo() {
+    alert(this.selectedPerson?.name);
+  }
+
+  showMonster(event: any) {
+    this.monsterRevealed = !this.monsterRevealed;
+    console.log(this.products[4]);
+    return this.products[4];
+  }
+
+  getTotalProducts() {
+    return this.products.length;
+  }
+
+  getBeautifulProducts() {
+    return this.products.filter((person) => person.beautiful != 'no').length;
+  }
+
+  getUglyProducts() {
+    return this.products.filter((person) => person.beautiful === 'no').length;
+  }
+
+  peopleCountRadioButton: string = 'all';
+
+  onFilterRadioButtonChanged(data: string) {
+    this.peopleCountRadioButton = data;
+  }
+
+  searchText: string = '';
+
+  onSearchTextEntered(data: string) {
+    this.searchText = data;
+  }
   products = [
     {
       id: 1,
@@ -53,36 +89,4 @@ export class ProductsComponent {
       beautiful: 'no',
     },
   ];
-
-  monsterRevealed: boolean = false;
-
-  showMonster(event: any) {
-    this.monsterRevealed = !this.monsterRevealed;
-    console.log(this.products[4]);
-    return this.products[4];
-  }
-
-  getTotalProducts() {
-    return this.products.length;
-  }
-
-  getBeautifulProducts() {
-    return this.products.filter((person) => person.beautiful != 'no').length;
-  }
-
-  getUglyProducts() {
-    return this.products.filter((person) => person.beautiful === 'no').length;
-  }
-
-  peopleCountRadioButton: string = 'all';
-
-  onFilterRadioButtonChanged(data: string) {
-    this.peopleCountRadioButton = data;
-  }
-
-  searchText: string = '';
-
-  onSearchTextEntered(data: string) {
-    this.searchText = data;
-  }
 }
